@@ -8,25 +8,6 @@ client.on('ready', () => {
   console.log('---------------')
 });
 
-ction(msg) {
-    if(msg.content.startsWith ('^'  + 'server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(`**Showing Details Of** ${msg.guild.name}`)
-      .addField('`Server Region`',`[${msg.guild.region}]`,true)
-      .addField('`Roles Count`',`[${msg.guild.roles.size}]`,true)
-      .addField('`Members Count`',`[${msg.guild.memberCount}]`,true)
-      .addField('`Online Members`',`[${msg.guild.members.filter(m=>m.presence.status == 'online').size}]`,true)
-      .addField('`Text Channels`',`[${msg.guild.channels.filter(m => m.type === 'text').size}]`,true)
-      .addField('`Voice Channels`',`[${msg.guild.channels.filter(m => m.type === 'voice').size}]`,true)
-      .addField('`Server Owner`',`**${msg.guild.owner}**`,true)
-      .addField('`Server Id`',`**${msg.guild.id}**`,true)
-      .addField('`Server was created in`',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed})
-    }
-});
-
  client.on('message', message => {
     if (message.content.startsWith('^' + "bot")) {
     message.channel.send({
@@ -523,7 +504,6 @@ client.on('message', message => {
 اوامر البوت
 ❖اوامر عامه 
 
-❖^server
 ❖^bot
 ❖^tag
 ❖^id
