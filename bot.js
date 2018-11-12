@@ -1,34 +1,11 @@
-//=============================== - [ Consts ] - ===================================
-
-
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const bot = new Discord.Client();
-const ms = require("ms");
-const fs = require('fs');
-const moment = require('moment');
-const request = require('request');
-const dateFormat = require('dateformat');
-const r1 = require('snekfetch');
-const jimp = require('jimp')
-const math = require('math-expression-evaluator'); 
-const child_process = require("child_process");
-const developers = ['290908670529896448'];
-const admin = ".";
-const prefix = ".";
-
-
-//=============================== - [ Bot ] - ===================================
-
-
+const prefix = "*";
 client.on('ready', () => {
-  console.log(`Logged in as : ${client.user.tag}!`);
-  console.log(`Servers : [ " ${client.guilds.size} " ]`);
-  console.log(`Users : [ " ${client.users.size} " ]`);
-  console.log(`Channels : [ " ${client.channels.size} " ]`);
-  console.log('client.users.get('....').user.username`)
-   client.user.setActivity("You | ^help",{type: 'WATCHING'})
-   client.user.setStatus("dnd")
+  client.user.setGame('ShiftMCMC | ^help','https://www.twitch.tv/peery13');
+  console.log('---------------');
+  console.log(' Bot Is Online')
+  console.log('---------------')
 });
 
 
