@@ -8,54 +8,6 @@ client.on('ready', () => {
   console.log('---------------')
 });
 
-
-   client.on('message', message => {
-        let guild = '468519385552650240';
-    if(message.content.includes('discord.gg')){
-                                            if(!message.channel.guild) return;
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return;
-    }
-}
-});
-
-
-
-client.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === client.user.id) return;
-        var iiMo = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTimestamp()
-            .setTitle(' New Dm Mesage ')
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setDescription(`\`${message.content}\``)
-            .setFooter(`From : ${message.author.tag}`)
-        client.channels.get("482813431196418049").send({ embed: iiMo });
-    }
-});
-
-
-
-      client.on('message', message => {
-                if (!developers.includes(message.author.id)) return;
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('.allbc')){
-message.channel.sendMessage(':white_check_mark:')
-client.users.forEach(m =>{
-    m.send(`${m}`)
-    m.send(args)
-})
-}
-});
-
-
-
-
-
-
 client.on('message', message => {
     if (!developers.includes(message.author.id)) return;
      if (message.content.toLowerCase() === '^' + "bot") {
