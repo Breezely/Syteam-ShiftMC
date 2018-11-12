@@ -25,7 +25,6 @@ __Channels : ${client.channels.size}__
 
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
     if(!message.channel.guild) return;
 if(message.content.toLowerCase() === '^' + "ping") {
 if(!message.channel.guild) return;
