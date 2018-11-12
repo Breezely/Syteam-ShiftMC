@@ -9,36 +9,6 @@ client.on('ready', () => {
 });
 
 
-
-
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
- 
-  if (message.content.startsWith(admi'*' + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(` ☑ Client Activity Now Is : \`Watching ${argresult} \` `)
-  } else 
-  if (message.content.startsWith('*' + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(` ☑ Client Activity Now Is : \`Listening ${argresult} \` `)
-  } else 
-  if (message.content.startsWith('*' + 'setstream')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-     message.channel.send(` ☑ Client Activity Now Is : \`Streaming ${argresult} \` `)
-  }
-  if (message.content.startsWith('*' + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(` Client UserName Changed To : \` ${argresult}\` `)
-} else
-if (message.content.startsWith('*' + 'setavatar')) {
-  client.user.setAvatar(argresult);
-      message.channel.send(` Client Avatar Changed To : \` ${argresult}\` `)
-}
-});
-
-
-
    client.on('message', message => {
         let guild = '468519385552650240';
     if(message.content.includes('discord.gg')){
