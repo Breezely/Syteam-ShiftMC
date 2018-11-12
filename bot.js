@@ -253,38 +253,6 @@ client.on('message' , async (message) => {
 
 
 
-client.on('message', message => {
-var prefix = "."
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
- if(message.content.split(' ')[0].toLowerCase() == '^ + 'channelinfo') {
-  if(message.channel.permissionsFor(message.client.user).has('EMBED_LINKS') == false) return message.reply('sorry but I cannot send Embed Links for this channel... check my permissions and try again!');
-  var kakchannel = args.slice(1).join(' ');
-  if(!kakchannel) return message.reply('please, specify a channel to get info...');
-
-  var achannel = message.guild.channels.find('name', kakchannel);
-  if(!achannel) return message.reply("i didn't find no channel with tha name! Try again later 👎");
-
-  var channelCreated = achannel.createdAt.toString().split(' ');
-       const millis = new Date().getTime() - message.guild.createdAt.getTime();
-    const now = new Date();
-    const createdAt = millis / 1000 / 60 / 60 / 24;
-  const embed = new Discord.RichEmbed()
-  .setColor(0xFF8DFD)
-  .setImage()
-  .setThumbnail('http://cdn.onlinewebfonts.com/svg/img_323299.png')
-  .setURL('')
-  .addField(`Channel Name`, `${achannel.name}`, true)
-  .addField(`Channel ID`, `${achannel.id}`, true)
-  .addField(`Channel Position`, `${achannel.position}`, true)
-  .addField(`Channel Members`, `${achannel.members.size} have acess`, true)
-  .addField(`Channel Type`, `${achannel.type}`, true)
-  .addField(`Channel Topic`, `${achannel.topic}`, true)
-  .addField(`Channel Created At`, `${createdAt.toFixed(0)} Days ago `)
-
-  message.channel.send({embed})
-}
-});
-
 
 
 client.on('message' , message => {
