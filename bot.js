@@ -9,7 +9,6 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (!developers.includes(message.author.id)) return;
      if (message.content.toLowerCase() === '^' + "bot") {
 message.channel.send(`
 
