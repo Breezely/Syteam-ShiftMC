@@ -255,7 +255,7 @@ client.on('message' , async (message) => {
 
 
 client.on('message' , message => {
-    var prefix = '.';
+    var prefix = '^';
      const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
  if(message.content.split(' ')[0].toLowerCase() == '^' + 'id') {
@@ -610,7 +610,7 @@ client.on('message',function(message) {
     let muteMember = message.mentions.members.first();
     let muteReason = messageArray[2];
     let muteDuration = messageArray[3];
- if (message.content.split(" ")[0].toLowerCase() === '^' + "tempmute") {
+ if (message.content.split(" ")[0].toLowerCase() === '^' + "mute") {
             
   if (message.author.bot) return;
        if(!muteRole) return message.guild.createRole({name: 'Muted'}).then(message.guild.channels.forEach(chan => chan.overwritePermissions(muteRole, {SEND_MESSAGES:false,ADD_REACTIONS:false})));
