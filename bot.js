@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "*";
 client.on('ready', () => {
-  client.user.setGame('ShiftMCMC | ^help','https://www.twitch.tv/peery13');
+  client.user.setGame('ShiftMCMC | *help','https://www.twitch.tv/peery13');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
 });
 
 client.on('message', message => {
-     if (message.content.toLowerCase() === '^' + "bot") {
+     if (message.content.toLowerCase() === '*' + "bot") {
 message.channel.send(`
 
 __Servers : ${client.guilds.size}__
@@ -25,7 +25,7 @@ __Channels : ${client.channels.size}__
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if(!message.channel.guild) return;
-if(message.content.toLowerCase() === '^' + "ping") {
+if(message.content.toLowerCase() === '*' + "ping") {
 if(!message.channel.guild) return;
 var msg = `${Date.now() - message.createdTimestamp}`
 var api = `${Math.round(client.ping)}`
@@ -42,7 +42,7 @@ message.channel.send({embed:embed}).then(message => message.delete(5000));
 
 
       client.on("message", message => {
-    if (message.content.toLowerCase() === '^' + "help") {
+    if (message.content.toLowerCase() === '*' + "help") {
         message.delete(5000)
         if(!message.channel.guild) return;
         const e = new Discord.RichEmbed()
@@ -126,7 +126,7 @@ message.channel.send({embed:embed}).then(message => message.delete(5000));
   var prefix = ".";
   if(message.author.bot) return;
 
-  if(message.content.startsWith('^' + "xo")) {
+  if(message.content.startsWith('*' + "xo")) {
  let array_of_mentions = message.mentions.users.array();
   let symbols = [':o:', ':heavy_multiplication_x:'] 
   var grid_message;
@@ -194,7 +194,7 @@ message.channel.send({embed:embed}).then(message => message.delete(5000));
 client.on('message', message => {
      const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
-    if(message.content.split(' ')[0].toLowerCase() == '^' + 'guild') {
+    if(message.content.split(' ')[0].toLowerCase() == '*' + 'guild') {
          let i = 1;
        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
             const millis = new Date().getTime() - message.guild.createdAt.getTime();
@@ -221,7 +221,7 @@ const command = args.shift().toLowerCase();
 
 client.on('message' , async (message) => {
 
- if(message.content.split(' ')[0].toLowerCase() == '^' + 'topinvites') {
+ if(message.content.split(' ')[0].toLowerCase() == '*' + 'topinvites') {
                  if(message.author.bot) return;
         if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
 
@@ -255,10 +255,10 @@ client.on('message' , async (message) => {
 
 
 client.on('message' , message => {
-    var prefix = '^';
+    var prefix = '*';
      const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
- if(message.content.split(' ')[0].toLowerCase() == '^' + 'id') {
+ if(message.content.split(' ')[0].toLowerCase() == '*' + 'id') {
      const millis = new Date().getTime() - message.guild.createdAt.getTime();
     const now = new Date();
     const createdAt = millis / 1000 / 60 / 60 / 24;
@@ -334,7 +334,7 @@ var mentionned = message.mentions.members.first();
 
 
 client.on('message', message => {
-    if(message.content.split(' ')[0].toLowerCase() == '^' + 'stats') {
+    if(message.content.split(' ')[0].toLowerCase() == '*' + 'stats') {
                if(message.author.bot) return;
         if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
     message.channel.send({
@@ -352,7 +352,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
- if(message.content.split(' ')[0].toLowerCase() == '^' + 'avatar') {
+ if(message.content.split(' ')[0].toLowerCase() == '*' + 'avatar') {
      if(message.author.bot) return;
         if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
         var mentionned = message.mentions.users.first();
@@ -369,7 +369,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
- if(message.content.split(' ')[0].toLowerCase() == '^' + 'avatar') {
+ if(message.content.split(' ')[0].toLowerCase() == '*' + 'avatar') {
      if(message.author.bot) return;
         if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
         var mentionned = message.mentions.users.first();
@@ -388,7 +388,7 @@ client.on('message', message => {
               
           if(!message.channel.guild) return;
    if(message.author.bot) return;
-       if(message.content.split(' ')[0].toLowerCase() == '^' + 'icon') {
+       if(message.content.split(' ')[0].toLowerCase() == '*' + 'icon') {
           if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
           const embed = new Discord.RichEmbed()
   
@@ -444,7 +444,7 @@ client.on('message', message => {
 client.on('message', async message => {
     let args = message.content.split(" ").slice(1)
 
-if (message.content.split(" ")[0].toLowerCase() === '^' + "tempban") {
+if (message.content.split(" ")[0].toLowerCase() === '*' + "tempban") {
   if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return;
  
   if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return;
@@ -516,7 +516,7 @@ if (message.content.split(" ")[0].toLowerCase() === '^' + "tempban") {
 
   let args = message.content.split(" ").slice(1);
 
-if (message.content.split(" ")[0].toLowerCase() === prefix + "ban") {
+if (message.content.split(" ")[0].toLowerCase() === '*' + "ban") {
                if(!message.channel.guild) return;
          
   if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return;
@@ -547,7 +547,7 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-if (message.content.split(" ")[0].toLowerCase() === '^' + "kick") {
+if (message.content.split(" ")[0].toLowerCase() === '*' + "kick") {
                if(!message.channel.guild) return;
          
   if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return;
@@ -582,7 +582,7 @@ if (message.content.split(" ")[0].toLowerCase() === '^' + "kick") {
  
   let command = message.content.split(" ")[0];
  
-  if (message.content.split(" ")[0].toLowerCase() === '^' + "unmute") {
+  if (message.content.split(" ")[0].toLowerCase() === '*' + "unmute") {
         if (!message.member.hasPermission('MANAGE_ROLES')) return;
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'log');
@@ -610,7 +610,7 @@ client.on('message',function(message) {
     let muteMember = message.mentions.members.first();
     let muteReason = messageArray[2];
     let muteDuration = messageArray[3];
- if (message.content.split(" ")[0].toLowerCase() === '^' + "mute") {
+ if (message.content.split(" ")[0].toLowerCase() === '*' + "mute") {
             
   if (message.author.bot) return;
        if(!muteRole) return message.guild.createRole({name: 'Muted'}).then(message.guild.channels.forEach(chan => chan.overwritePermissions(muteRole, {SEND_MESSAGES:false,ADD_REACTIONS:false})));
@@ -634,7 +634,7 @@ client.on('message',function(message) {
 client.on('message', message => {
 
 if (message.author.bot) return;
-  if (message.content.split(" ")[0].toLowerCase() === '^' + "mc") {
+  if (message.content.split(" ")[0].toLowerCase() === '*' + "mc") {
                         if(!message.channel.guild) return;
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You Need MANAGE_MESSAGES Permission').then(message => message.delete(5000))
@@ -649,7 +649,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You N
                message.channel.send(e)
                });
              }
-if (message.content.split(" ")[0].toLowerCase() === '^' + "umc") {
+if (message.content.split(" ")[0].toLowerCase() === '*' + "umc") {
     if(!message.channel.guild) return;
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You Need MANAGE_MESSAGES Permission').then(message => message.delete(5000))
@@ -672,7 +672,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You N
 
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith('^' + 'role')) {
+    if(message.content.startsWith('*' + 'role')) {
         let member = message.mentions.users.first();
         let role = args.join(' ').replace(member, '').replace(args[0], '').replace(' ', '');
         console.log(role);
@@ -788,7 +788,7 @@ const ee =new Discord.RichEmbed()
 
 client.on('message', ra3d => {
                         let args = ra3d.content.split(" ").slice(1).join(" ")
-if (ra3d.content.split(" ")[0].toLowerCase() === '^' + "createcolors") {
+if (ra3d.content.split(" ")[0].toLowerCase() === '*' + "createcolors") {
     if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
              if (!ra3d.member.hasPermission('MANAGE_ROLES')) return;
               ra3d.channel.send(`** Done ... \n __${args}__ Color Role Created **`);
@@ -806,7 +806,7 @@ if (ra3d.content.split(" ")[0].toLowerCase() === '^' + "createcolors") {
 
 client.on('message', message => {
      var prefix = '.';
- if (message.content.split(" ")[0].toLowerCase() === '^' + "clear") {
+ if (message.content.split(" ")[0].toLowerCase() === '*' + "clear") {
         const word = message.content;
         const number = word.slice(7, word.length);
         const int = Number(number);
@@ -832,7 +832,7 @@ client.on('message', message => {
 // ------------ = [Voice Commands] = ------------
 
  client.on('message', message => {
- if (message.content.toLowerCase() === '^' + "move all") {
+ if (message.content.toLowerCase() === '*' + "move all") {
      message.delete(4000)
  if(!message.channel.guild) return;
  if (!message.member.hasPermission("MOVE_MEMBERS")) return;
